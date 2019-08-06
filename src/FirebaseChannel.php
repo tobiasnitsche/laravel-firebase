@@ -56,10 +56,18 @@ class FirebaseChannel
         ]);
     }
 
+     /**
+     * @return Client
+     */
+    protected function getClient()
+    {
+        return $this->client;
+    }
+    
     /**
      * @return string
      */
-    private function getApiKey()
+    protected function getApiKey()
     {
         $key = config('services.firebase.key');
         if (is_null($key)) {
